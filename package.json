@@ -4,7 +4,8 @@
   "description": "template for a nodejs web server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
+    "gulp": "./node_modules/.bin/gulp"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "gulp": "^3.9.1",
     "string-format": "^0.5.0",
     "zero-config": "^7.1.1"
   }
