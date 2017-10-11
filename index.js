@@ -7,9 +7,6 @@ format.extend(String.prototype)
 const config = fetchConfig(__dirname);
 const port = config.get('app.port');
 
-console.log('port:' + port);
-
-
 app.get('/', function (req, res) {
   res.send('Hello World!');
 })
