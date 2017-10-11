@@ -1,0 +1,21 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "template for a nodejs web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"place_holder\""
+  },
+  "author": {
+    "name": "Jingchao Chen",
+    "email": "jcc8887@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
