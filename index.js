@@ -1,10 +1,19 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const fetchConfig = require('zero-config');
+const format = require('string-format');
+format.extend(String.prototype)
+
+const config = fetchConfig(__dirname);
+const port = config.get('app.port');
+
+console.log('port:' + port);
+
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.send('Hello World!');
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+app.listen(port, function () {
+  console.log('Example app listening on port {0}!'.format(port));
+});

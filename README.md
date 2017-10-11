@@ -1,7 +1,6 @@
 Template for a Node.js web server
 
 ##TODO: 
-1. add zero-config
 2. add templating 
 3. add gulf
 4. add static assets
