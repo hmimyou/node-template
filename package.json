@@ -29,7 +29,7 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "fmt": "prettier --single-quote --trailing-comma all --no-bracket-spacing --print-width 100 --write '*.js'",
+    "fmt": "prettier --single-quote --trailing-comma all --no-bracket-spacing --print-width 100 --write '*.js' 'src/**/*.js'",
     "lint": "eslint --ext .js .",
     "start": "node index.js",
     "test": "echo \\\"Error: no test specified\\\" && exit 1\""
