@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "template for a nodejs web server",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
-    "gulp": "./node_modules/.bin/gulp"
-  },
   "repository": {
     "type": "git",
     "url": "\"place_holder\""
@@ -21,5 +17,19 @@
     "gulp": "^3.9.1",
     "string-format": "^0.5.0",
     "zero-config": "^7.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp",
+    "lint": "./node_modules/.bin/eslint --ext .js .",
+    "start": "node index.js",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1\""
   }
 }
