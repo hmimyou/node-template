@@ -8,8 +8,8 @@ const config = fetchConfig('{0}/../../'.format(__dirname));
 const port = config.get('server.port');
 
 function startServer(callback) {
-  app.get('/', (req, res) => {
-    res.send('Hello World!\n');
+  app.get('/health', (req, res) => {
+    res.send('OK!\n');
   });
 
   app.use(express.static('{0}/../client'.format(__dirname)));
