@@ -32,7 +32,7 @@
     "prettier": "^1.7.4"
   },
   "scripts": {
-    "gulp": "gulp",
+    "gulp": "npm run fmt && npm run lint && gulp",
     "fmt": "prettier --single-quote all --no-bracket-spacing --print-width 100 --write '*.js' 'src/**/*.js'",
     "lint": "eslint --ext .js .",
     "start": "npm run clean && npm run gulp && node index.js",
