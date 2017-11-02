@@ -9,7 +9,7 @@ const port = config.get('server.port');
 
 function startServer(callback) {
   app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World!\n');
   });
 
   app.listen(port, () => {
