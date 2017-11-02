@@ -12,6 +12,8 @@ function startServer(callback) {
     res.send('Hello World!\n');
   });
 
+  app.use(express.static('{0}/../client'.format(__dirname)));
+
   app.listen(port, () => {
     console.log('Example app listening on port {0}!'.format(port));
 
