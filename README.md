@@ -1,6 +1,12 @@
-Template for a Node.js web server
+Template for a Node.js web server.
 
-##TODO: 
+## To start the server:
+
+```
+$ npm start
+```
+
+## TODO: 
 - add sass
 - add client side templating
 - add client js minifier
