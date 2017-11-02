@@ -4,7 +4,7 @@ const fetchConfig = require('zero-config');
 const format = require('string-format');
 format.extend(String.prototype);
 
-const config = fetchConfig('{0}/../'.format(__dirname));
+const config = fetchConfig('{0}/../../'.format(__dirname));
 const port = config.get('server.port');
 
 function startServer(callback) {

@@ -31,7 +31,7 @@
     "prettier": "^1.7.4"
   },
   "scripts": {
-    "babel-server": "babel src/server --out-dir dist-server",
+    "babel-server": "babel src/server --out-dir dist/server",
     "gulp": "gulp",
     "fmt": "prettier --single-quote --trailing-comma all --no-bracket-spacing --print-width 100 --write '*.js' 'src/**/*.js'",
     "lint": "eslint --ext .js .",
