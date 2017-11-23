@@ -15,7 +15,7 @@ function startServer(callback) {
   app.use(express.static('{0}/../client'.format(__dirname)));
 
   app.listen(port, () => {
-    console.log('Example app listening on port {0}!'.format(port));
+    console.log('Example app running, visit through http://localhost:{0}'.format(port));
 
     if (typeof callback === 'function') {
       return callback(app);
