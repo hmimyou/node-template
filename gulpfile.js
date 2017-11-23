@@ -12,6 +12,7 @@ const gutil = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const del = require('del');
+const rev = require('gulp-rev');
 
 gulp.task('default', ['build-server', 'build-client'], () => {
   // place code for your default task here
@@ -38,6 +39,7 @@ gulp.task('build-client:sass', ['build-client:sass:lint'], function() {
   return gulp
     .src('src/client/stylesheets/**/*.scss')
     .pipe(sass.sync({outputStyle: outputStyle}).on('error', sass.logError))
+    .pipe(rev())
     .pipe(gulp.dest('dist/client/stylesheets'));
 });
 
@@ -75,6 +77,7 @@ gulp.task('build-client:js:broswerify', ['build-client:js:babel'], function() {
       .pipe(uglify())
       .on('error', gutil.log)
       .pipe(sourcemaps.write('./'))
+      .pipe(rev())
       .pipe(gulp.dest('./dist/client/javascripts/')) );
 });
 

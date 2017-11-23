@@ -9,5 +9,4 @@ $ npm start
 ## TODO: 
 - add route
 - add test
-- add [file name hashing](https://github.com/sindresorhus/gulp-rev)
 - add html templating
