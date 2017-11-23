@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const inject = require('gulp-inject');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
@@ -41,12 +42,21 @@ gulp.task('build-client:sass:lint', function() {
 });
 
 gulp.task('build-client:js', () =>
-  gulp.src('src/client/javascripts/**/*').pipe(gulp.dest('dist/client/javascripts'))
+  gulp
+    .src('src/client/javascripts/**/*')
+    .pipe(babel({}))
+    .pipe(gulp.dest('dist/client/javascripts'))
 );
 
-gulp.task('build-client:html', () =>
-  gulp.src('src/client/**/*.html').pipe(gulp.dest('dist/client'))
-);
+gulp.task('build-client:html', ['build-client:sass', 'build-client:js'], function() {
+  var target = gulp.src('src/client/index.html');
+  // It's not necessary to read the files (will speed up things), we're only after their paths:
+  var sources = gulp.src(['dist/client/javascripts/**/*.js', 'dist/client/stylesheets/**/*.css'], {
+    read: false
+  });
+
+  return target.pipe(inject(sources, {ignorePath: 'dist/client'})).pipe(gulp.dest('dist/client'));
+});
 
 gulp.task('build-client:img', () =>
   gulp.src('src/client/images/**/*').pipe(gulp.dest('dist/client/images'))
