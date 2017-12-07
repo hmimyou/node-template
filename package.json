@@ -44,17 +44,19 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "path-exists": "^3.0.0",
     "prettier": "^1.7.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "gulp": "npm run fmt && npm run lint && gulp",
-    "fmt": "prettier --single-quote all --no-bracket-spacing --print-width 100 --write '*.js' 'src/**/*.js'",
+    "fmt": "prettier --single-quote all --no-bracket-spacing --print-width 100 --write '*.js' 'src/**/*.js' 'gulp-tasks/**/*.js'",
     "lint": "eslint --ext .js .",
-    "start": "npm run clean && npm run gulp && node index.js",
-    "clean": "rm -rf dist",
+    "start": "node index.js",
+    "clean": "rm -rf dist tmp",
     "rebuild": "npm run clean && npm run gulp",
+    "restart": "npm run rebuild && npm start",
     "test": "echo \\\"Error: no test specified\\\" && exit 1\""
   }
 }
